@@ -44,88 +44,44 @@
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="images/favicon.png" type="image/png" />
 
-		<style>
+		<link rel="stylesheet" href="./css/reset.css">
+		<link rel="stylesheet" href="./css/critical.css">
 
-			html,body {
-				margin: 0;
-				padding: 0;
-			}
-
-			.hero {
-				position: relative;
-				width: 100vw;
-				height: 100vh;
-				height: 100dvh; /* Dynamic viewport height per mobile */
-				overflow: hidden;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
-
-			.hero picture {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				z-index: -1;
-			}
-
-			.hero img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				object-position: center;
-			}
-
-			.hero-content {
-				text-align: center;
-				z-index: 1;
-				max-width: 90%;
-				padding: 2rem;
-
-				h1 {
-					font-size: 24px;
-				}
-
-				p {
-					font-size: 16px;
-				}
-
-			}
-		</style>
+		<style></style>
 	</head>
 	<body>
-		<section class="hero" role="banner" aria-label="Sezione principale">
-			<div class="hero-content">
-				<h1>Il tuo titolo principale</h1>
-				<p>Sottotitolo o descrizione</p>
-				<a href="#content" class="cta-button">Call to Action</a>
-			</div>
+		<main class="tatamade">
+			<section
+				class="tatamade__hero"
+				role="banner"
+				aria-label="Sezione principale"
+			>
+				<div class="hero__content">
+					<h1 class="content__h1">tatamade architects</h1>
+					<p class="content__p">Crafting spaces, inspiring lives.</p>
+					<a href="#" class="content__a">view projects</a>
+				</div>
 
-			<!-- Immagine di sfondo ottimizzata -->
-			<picture>
-				<source
-					media="(min-width: 1200px)"
-					srcset="./images/hero-projects-leicester-square-desktop.webp"
-					type="image/webp"
-				/>
-				<source
-					media="(min-width: 768px)"
-					srcset="./images/hero-projects-leicester-square-desktop.webp"
-					type="image/webp"
-				/>
-				<source
-					media="(max-width: 767px)"
-					srcset="./images/hero-projects-leicester-square-mobile.webp"
-					type="image/webp"
-				/>
-				<img
-					src="hero-fallback.jpg"
-					alt="Descrizione significativa dell'immagine"
-					loading="eager"
-				/>
-			</picture>
-		</section>
+				<!-- Immagine di sfondo ottimizzata -->
+				<picture class="hero__picture">
+					<source
+						media="(min-width: 768px)"
+						srcset="./images/hero-projects-leicester-square-desktop.webp"
+						type="image/webp"
+					/>
+					<source
+						media="(max-width: 767px)"
+						srcset="./images/hero-projects-leicester-square-mobile.webp"
+						type="image/webp"
+					/>
+					<img
+						class="picture__img"
+						src="hero-fallback.jpg"
+						alt="Descrizione significativa dell'immagine"
+						loading="eager"
+					/>
+				</picture>
+			</section>
+		</main>
 	</body>
 </html>
