@@ -43,8 +43,87 @@
 
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+
+		<style>
+
+			html,body {
+				margin: 0;
+				padding: 0;
+			}
+
+			.hero {
+				position: relative;
+				width: 100vw;
+				height: 100vh;
+				height: 100dvh; /* Dynamic viewport height per mobile */
+				overflow: hidden;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.hero picture {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+			}
+
+			.hero img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+
+			.hero-content {
+				text-align: center;
+				z-index: 1;
+				max-width: 90%;
+				padding: 2rem;
+			}
+
+			/* Accessibilità - rispetta le preferenze di movimento ridotto */
+			@media (prefers-reduced-motion: no-preference) {
+				.hero {
+					/* Eventuali animazioni qui */
+				}
+			}
+		</style>
 	</head>
 	<body>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quidem repellendus qui quisquam ipsam eligendi mollitia praesentium a aliquam quaerat, doloribus ea voluptate expedita culpa odit. Animi ullam dolore omnis.
-    </body>
+		<section class="hero" role="banner" aria-label="Sezione principale">
+			<div class="hero-content">
+				<h1>Il tuo titolo principale</h1>
+				<p>Sottotitolo o descrizione</p>
+				<a href="#content" class="cta-button">Call to Action</a>
+			</div>
+
+			<!-- Immagine di sfondo ottimizzata -->
+			<picture>
+				<source
+					media="(min-width: 1200px)"
+					srcset="./images/hero-projects-leicester-square-desktop.webp"
+					type="image/webp"
+				/>
+				<source
+					media="(min-width: 768px)"
+					srcset="./images/hero-projects-leicester-square-desktop.webp"
+					type="image/webp"
+				/>
+				<source
+					media="(max-width: 767px)"
+					srcset="./images/hero-projects-leicester-square-mobile.webp"
+					type="image/webp"
+				/>
+				<img
+					src="hero-fallback.jpg"
+					alt="Descrizione significativa dell'immagine"
+					loading="eager"
+				/>
+			</picture>
+		</section>
+	</body>
 </html>
